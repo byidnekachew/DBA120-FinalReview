@@ -1,3 +1,7 @@
+SELECT * FROM boohbah_stand_link;
+SELECT * FROM boohbah;
+SELECT * FROM jojo_stand;
+
 -- Question 1
 SELECT boohbah_id, AVG(sync_level), name
 FROM boohbah_stand_link
@@ -7,8 +11,8 @@ GROUP BY boohbah_id, name;
 -- Question 2
 SELECT b.name, s.stand_name
 FROM boohbah b
-JOIN jojo_stand s
-ON b.boohbah_id = s.stand_id;
+JOIN boohbah_stand_link l ON b.boohbah_id = l.stand_id
+JOIN jojo_stand s ON l.stand_id = s.stand_id;
 
 -- Question 3
 SELECT name, color

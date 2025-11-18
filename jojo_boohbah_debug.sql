@@ -1,7 +1,3 @@
-SELECT * FROM boohbah_stand_link;
-SELECT * FROM boohbah;
-SELECT * FROM jojo_stand;
-
 -- Question 1
 SELECT boohbah_id, AVG(sync_level), name
 FROM boohbah_stand_link
@@ -59,7 +55,7 @@ WHERE (boohbah_id, stand_id) IN
 
 -- Question 10
 MERGE INTO boohbah b
-USING jojo_stand s
-ON (b.boohbah_id = s.stand_id)
+USING boohbah_stand_link l
+ON (b.boohbah_id = l.stand_id)
 WHEN MATCHED THEN
   UPDATE SET b.energy_level = 999;

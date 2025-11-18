@@ -16,11 +16,11 @@ FROM boohbah
 WHERE energy_level > 80;
 
 -- Question 4
-SELECT boohbah_id, stand_id
+SELECT b.boohbah_id, l.stand_id
 FROM boohbah b
 JOIN boohbah_stand_link l
 ON b.boohbah_id = l.boohbah_id
-WHERE boohbah_id = 2;
+WHERE b.boohbah_id = 2;
 
 -- Question 5
 SELECT name

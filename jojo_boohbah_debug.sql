@@ -7,7 +7,7 @@ GROUP BY boohbah_id, name;
 -- Question 2
 SELECT b.name, s.stand_name
 FROM boohbah b
-JOIN boohbah_stand_link l ON b.boohbah_id = l.stand_id
+JOIN boohbah_stand_link l ON b.boohbah_id = l.boohbah_id
 JOIN jojo_stand s ON l.stand_id = s.stand_id;
 
 -- Question 3
@@ -58,4 +58,4 @@ MERGE INTO boohbah b
 USING boohbah_stand_link l
 ON (b.boohbah_id = l.stand_id)
 WHEN MATCHED THEN
-  UPDATE SET b.energy_level = 999;
+  UPDATE SET b.energy_level = b.energy_level + 999;
